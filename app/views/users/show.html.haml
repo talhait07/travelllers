@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Middle name:
+  = @user.middle_name
+%p
+  %b Lon:
+  = @user.lon
+%p
+  %b Lat:
+  = @user.lat
+%p
+  %b Avatar:
+  = @user.avatar
+%p
+  %b About:
+  = @user.about
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
