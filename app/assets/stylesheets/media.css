@@ -4,9 +4,9 @@ body {
 body, h1, h2, h3, h4, h5, h6 {
   font-family: helvetica, arial, sans-serif;
 }
-.container {
-  max-width: 960px;
-}
+/*.container {*/
+  /*max-width: 960px;*/
+/*}*/
 .btn {
   border-radius: 3em;
 }
@@ -50,7 +50,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 .jumbotron {
   background: #f0f0f0;
-  background-image: url(../img/stock-mba1.jpg);
+  background-image: url(/assets/stock-mba1.jpg);
   background-size: 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -100,6 +100,11 @@ footer {
   .jumbotron h2 {
     max-width: 100%;
   }
+
+  .home-jumbotron {
+      font-size: 14px;
+      padding: 6em 0 4em;
+  }
   .navbar ul.nav li {
     text-align: center;
   }
@@ -118,6 +123,10 @@ footer {
     font-size: 12px;
     height: 150px;
     padding-top: 0.1em;
+  }
+
+  .home-jumbotron {
+    font-size: 12px;
   }
   footer .pull-right {
     display: none;

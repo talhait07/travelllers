@@ -1,3 +1,41 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-jumbotron {
+  background: url(/assets/noisy_net.png);
+  color: #fff;
+  padding: 6.5em 0 6em;
+  text-align: center;
+}
+.home-jumbotron h1 {
+  font-family: "gandhi serif", georgia, serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #000;
+}
+.home-jumbotron h2 {
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.4em;
+  margin-bottom: 1.4em;
+}
+.home-jumbotron .btn {
+  box-shadow: 1px 1px 3px #000;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.3em 2.5em 0.5em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.home-jumbotron .btn .glyphicon {
+  margin-left: 0.2em;
+  position: relative;
+  top: 3px;
+}
+
+#header.affix {
+  position: fixed;
+  top: 0;
+  width: 100%
+}

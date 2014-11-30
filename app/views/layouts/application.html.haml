@@ -7,17 +7,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:class => "#{controller_name.downcase.to_s}"}
-    #header
-      = render 'layouts/header'
+    %header#header
+    = render 'layouts/header'
     %div{:class => "page-content #{action_name.downcase.to_s}"}
       .container
         = yield
     %footer
-      .container.clearfix
-        %p.pull-left
-          Copyright &copy; Acme Corp 2013
-        %p.pull-right
-          a template from
-          %a{:href => "http://coverstrap.com"} Coverstrap
-      / /.container
+      = render 'layouts/footer'
 
