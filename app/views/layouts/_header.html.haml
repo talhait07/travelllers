@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.nav-link{:href => "#top"} Acme Corp
+    / /.navbar-header
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "#"} Home
+        %li
+          %a{:href => "#"} Features
+        %li
+          %a{:href => "#"} Tour
+        %li
+          %a{:href => "#"} About Us
+    / /.navbar-collapse
+  / /.container

@@ -18,3 +18,8 @@
 //= require jquery.easing.min
 //= require_tree .
 
+
+
+$(document).ready(function() {
+    $('.dropdown-toggle').dropdown()
+});
