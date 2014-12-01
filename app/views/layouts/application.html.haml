@@ -8,10 +8,10 @@
     = csrf_meta_tags
   %body{:class => "#{controller_name.downcase.to_s}"}
     %header#header
-    = render 'layouts/header'
+      = render 'layouts/header'
     %div{:class => "page-content #{action_name.downcase.to_s}"}
-      .container
-        = yield
+
+      = yield
     %footer
       = render 'layouts/footer'
 

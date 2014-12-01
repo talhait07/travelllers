@@ -1,5 +1,5 @@
 - title ("Home |")
-#top.home-jumbotron
+#top
   .container
     %h1 Quick Brown Fox Jumps
     %h2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
@@ -7,25 +7,93 @@
       %a.btn.btn-warning.btn-lg
         Sign Up Today
         %span.glyphicon.glyphicon-circle-arrow-right
+.container
+  .container
+    %h3#benefits.subhead Why Use This Product
+    .row
+      .col-md-4.col-sm-6.benefit
+        .benefit-ball
+          %span.glyphicon.glyphicon-home
+        %h3 Benefit Title
+        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
+      / /.benefit
+      .col-md-4.col-sm-6.benefit
+        .benefit-ball
+          %span.glyphicon.glyphicon-cloud
+        %h3 Benefit Title
+        %p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      / /.benefit
+      .col-md-4.col-sm-6.benefit
+        .benefit-ball
+          %span.glyphicon.glyphicon-bell
+        %h3 Benefit Title
+        %p Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.
+      / /.benefit
+      .col-md-4.col-sm-6.benefit
+        .benefit-ball
+          %span.glyphicon.glyphicon-bullhorn
+        %h3 Benefit Title
+        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
+      / /.benefit
+      .col-md-4.col-sm-6.benefit
+        .benefit-ball
+          %span.glyphicon.glyphicon-cutlery
+        %h3 Benefit Title
+        %p Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      / /.benefit
+      .col-md-4.col-sm-6.benefit
+        .benefit-ball
+          %span.glyphicon.glyphicon-fire
+        %h3 Benefit Title
+        %p Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.
+      / /.benefit
+    / /.row
+    .sect-border
+    %h3#tour.subhead Take A Tour Of This Product
+    .row
+      .col-md-12
+        #slideshow.carousel.slide
+          %ol.carousel-indicators
+            %li.active{"data-slide-to" => "0", "data-target" => "#slideshow"}
+            %li{"data-slide-to" => "1", "data-target" => "#slideshow"}
+            %li{"data-slide-to" => "2", "data-target" => "#slideshow"}
+            %li{"data-slide-to" => "3", "data-target" => "#slideshow"}
+            %li{"data-slide-to" => "4", "data-target" => "#slideshow"}
+          .carousel-inner
+            .item.active
+              %img{:src => "assets/stock1.jpg"}
+                .carousel-caption
+                  Amazing photos provided by
+                  %a{:href => "http://unsplash.com"} unsplash.com
+            .item
+              %img{:src => "assets/stock2.jpg"}
+                .carousel-caption
+                  Boat in Water
+            .item
+              %img{:src => "assets/stock3.jpg"}
+                .carousel-caption
+                  Millennium Bridge in London
+            .item
+              %img{:src => "assets/stock4.jpg"}
+                .carousel-caption
+                  Blurs
+            .item
+              %img{:src => "assets/stock5.jpg"}
+                .carousel-caption
+                  Santorini Greece
+          %a.left.carousel-control{"data-slide" => "prev", :href => "#slideshow"}
+            %span.glyphicon.glyphicon-chevron-left
+          %a.right.carousel-control{"data-slide" => "next", :href => "#slideshow"}
+            %span.glyphicon.glyphicon-chevron-right
+        / #slideshow
+      / /.col-md-12
+    / /.row
+    .sect-border
+    %h3#about.subhead A Little More About Us
+    .row
+      .col-md-10.col-md-offset-1.text-center
+        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan.
+        %p Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
+      / /.col-md-10
+    / /.row
 
-    %h1 Quick Brown Fox Jumps
-    %h2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    %p
-      %a.btn.btn-warning.btn-lg
-        Sign Up Today
-        %span.glyphicon.glyphicon-circle-arrow-right
-
-    %h1 Quick Brown Fox Jumps
-    %h2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    %p
-      %a.btn.btn-warning.btn-lg
-        Sign Up Today
-        %span.glyphicon.glyphicon-circle-arrow-right
-
-    %h1 Quick Brown Fox Jumps
-    %h2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    %p
-      %a.btn.btn-warning.btn-lg
-        Sign Up Today
-        %span.glyphicon.glyphicon-circle-arrow-right
-  / /.container

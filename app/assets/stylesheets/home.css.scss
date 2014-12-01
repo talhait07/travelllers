@@ -2,40 +2,78 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home-jumbotron {
-  background: url(/assets/noisy_net.png);
+#top {
+  background: url(/assets/background-image.jpg);
   color: #fff;
   padding: 6.5em 0 6em;
   text-align: center;
+  width: 100%;
+  margin-top: 8px;
+  border-bottom: 4px thick dotted #c0c0c0;
+  margin-bottom: 30px;
 }
-.home-jumbotron h1 {
+
+
+.container {
+  max-width: 920px;
+}
+
+#header {
+  border-bottom: 4px solid #61dcdb;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.sect-border {
+  border-top: 1px dashed #d6d6d6;
+  border-bottom: 1px dashed #f6f6f6;
+  margin: 2em 8% 2.4em;
+}
+.subhead {
+  color: #000;
   font-family: "gandhi serif", georgia, serif;
   font-size: 3em;
   font-weight: bold;
-  text-shadow: 1px 1px 3px #000;
+  text-align: center;
+  margin: 0.3em 0;
 }
-.home-jumbotron h2 {
-  font-size: 1.2em;
-  font-style: italic;
-  font-weight: normal;
-  line-height: 1.4em;
-  margin-bottom: 1.4em;
-}
-.home-jumbotron .btn {
-  box-shadow: 1px 1px 3px #000;
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 0.3em 2.5em 0.5em;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-.home-jumbotron .btn .glyphicon {
-  margin-left: 0.2em;
-  position: relative;
-  top: 3px;
+.benefit {
+  margin: 0.8em 0;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
-#header.affix {
-  position: fixed;
-  top: 0;
-  width: 100%
+.benefit .benefit-ball {
+  background: #428bca;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  line-height: 1em;
+  padding: 3em;
+}
+.benefit .benefit-ball .glyphicon {
+  font-size: 4em;
+  position: relative;
+  top: -3px;
+  right: 1px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.benefit h3 {
+  color: #000;
+  font-family: "gandhi serif", georgia, serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#slideshow {
+  margin: 0.5em 0 1.5em;
+}
+#slideshow .carousel-inner img {
+  background: rgba(0, 0, 0, 0.34);
+  height: 500px;
+  width: 100%;
 }
