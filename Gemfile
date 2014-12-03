@@ -27,7 +27,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'simple_form'
-
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
