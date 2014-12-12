@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.custom-text {
+  h1 {
+    color: rgba(16, 22, 8, 0.93);
+  }
+  h2 {
+    color: rgba(16, 22, 8, 0.93);
+  }
+}
 #top {
-  background: url(/assets/background-image.jpg);
+  background: url(/assets/background-image.jpg) -330px 450px;
   color: #fff;
   padding: 6.5em 0 6em;
   text-align: center;

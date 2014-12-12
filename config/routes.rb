@@ -1,4 +1,6 @@
 Travellers::Application.routes.draw do
+  resources :places
+
   root  "home#index"
   devise_for :users
   resources :users

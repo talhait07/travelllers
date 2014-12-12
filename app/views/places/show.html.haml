@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @place.name
+%p
+  %b Rating:
+  = @place.rating
+%p
+  %b Longitude:
+  = @place.longitude
+%p
+  %b Latitude:
+  = @place.latitude
+%p
+  %b Visited count:
+  = @place.visited_count
+%p
+  %b Description:
+  = @place.description
+
+= link_to 'Edit', edit_place_path(@place)
+\|
+= link_to 'Back', places_path
