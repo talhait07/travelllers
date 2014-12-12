@@ -7,6 +7,7 @@
     %th Longitude
     %th Latitude
     %th Visited count
+    %th address
     %th Description
     %th
     %th
@@ -19,6 +20,7 @@
       %td= place.longitude
       %td= place.latitude
       %td= place.visited_count
+      %td= place.address
       %td= place.description
       %td= link_to 'Show', place
       %td= link_to 'Edit', edit_place_path(place)

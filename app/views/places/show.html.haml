@@ -1,5 +1,9 @@
-%p#notice= notice
+- javascript 'gmap.js'
+- javascript 'markerclusterer_packed.js'
 
+%p#notice= notice
+%div{:style => "width: 800px;"}
+  #map{:style => "width: 800px; height: 400px;"}
 %p
   %b Name:
   = @place.name
@@ -16,9 +20,14 @@
   %b Visited count:
   = @place.visited_count
 %p
+  %b Address:
+  = @place.address
+%p
   %b Description:
   = @place.description
 
 = link_to 'Edit', edit_place_path(@place)
 \|
 = link_to 'Back', places_path
+
+= render 'map', :object => @hash

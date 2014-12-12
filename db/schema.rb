@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141210192834) do
     t.float    "latitude"
     t.integer  "visited_count"
     t.text     "description"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

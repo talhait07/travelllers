@@ -10,6 +10,10 @@ class PlacesController < ApplicationController
 
   def show
     respond_with(@place)
+    @hash = Gmaps4rails.build_markers(@place) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
   end
 
   def new
@@ -42,6 +46,6 @@ class PlacesController < ApplicationController
     end
 
     def place_params
-      params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description)
+      params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description, :address)
     end
 end
