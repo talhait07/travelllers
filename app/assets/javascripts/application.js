@@ -16,7 +16,7 @@
 //= require chosen.jquery.min
 //= require jquery.lavalamp.min
 //= require jquery.easing.min
-//= require underscore-min
+//= require underscore
 //= require gmaps/google
 
 

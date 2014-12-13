@@ -1,33 +1,51 @@
 - javascript 'gmap.js'
 - javascript 'markerclusterer_packed.js'
+- title ("Places | #{@place.name}")
 
-%p#notice= notice
-%div{:style => "width: 800px;"}
-  #map{:style => "width: 800px; height: 400px;"}
-%p
-  %b Name:
-  = @place.name
-%p
-  %b Rating:
-  = @place.rating
-%p
-  %b Longitude:
-  = @place.longitude
-%p
-  %b Latitude:
-  = @place.latitude
-%p
-  %b Visited count:
-  = @place.visited_count
-%p
-  %b Address:
-  = @place.address
-%p
-  %b Description:
-  = @place.description
+.container
+  %br
+  %div{:style => "width: 800px;"}
+    #map{:style => "width: 800px; height: 400px;"}
+  %br
+  .col-md-6
+    %p
+      %b Name:
+      = @place.name
+    %p
+      %b Rating:
+      = @place.rating
+    %p
+      %b Longitude:
+      = @place.longitude
+    %p
+      %b Latitude:
+      = @place.latitude
 
-= link_to 'Edit', edit_place_path(@place)
-\|
-= link_to 'Back', places_path
+  .col-md-6
 
-= render 'map', :object => @hash
+    %p
+      %b Visited count:
+      = @place.visited_count
+    %p
+      %b Address:
+      = @place.address
+    %p
+      %b Description:
+      = @place.description
+  .clearfix
+  = link_to 'Edit', edit_place_path(@place)
+  \|
+  = link_to 'Back', places_path
+
+  -#= render 'map', :object => @hash
+  :javascript
+  $(document).ready(function(){
+
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarker(#{raw @hash.to_json} );
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+  });
+

@@ -9,11 +9,12 @@ class PlacesController < ApplicationController
   end
 
   def show
-    respond_with(@place)
     @hash = Gmaps4rails.build_markers(@place) do |place, marker|
       marker.lat place.latitude
       marker.lng place.longitude
     end
+    respond_with(@place, @hash)
+    #raise @hash.inspect
   end
 
   def new
@@ -27,7 +28,8 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     @place.save
-    respond_with(@place)
+    respond_with(@place, )
+    flash[:success] = 'New place added '
   end
 
   def update
@@ -46,6 +48,7 @@ class PlacesController < ApplicationController
     end
 
     def place_params
-      params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description, :address)
+      params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description,
+                                    :address, :images_attributes => [:image, :id, :place_id])
     end
 end

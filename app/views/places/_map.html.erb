@@ -1,8 +1,9 @@
 <script type="text/javascript">
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarker(<%=raw object.to_json.inspect %>);
+        markers = handler.addMarker(<%=raw @hash.to_json.inspect %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
     });
 </script>
+

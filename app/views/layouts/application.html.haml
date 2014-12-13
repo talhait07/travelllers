@@ -6,10 +6,12 @@
       = yield(:title) || 'dummy text'
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
+
     = csrf_meta_tags
   %body{:class => "#{controller_name.downcase.to_s}"}
     %header#header
       = render 'layouts/header'
+    .container= render partial: "layouts/flash_message", flash: flash
     %div{:class => "page-content #{action_name.downcase.to_s}"}
 
       = yield
