@@ -4,7 +4,11 @@ class PlacesController < ApplicationController
   respond_to :html
 
   def index
-    @places = Place.all
+    if (params.has_key?(:status) && params[:status].include?('present') )
+      @places = current_user.places
+    else
+      @places = Place.all
+    end
     respond_with(@places)
   end
 

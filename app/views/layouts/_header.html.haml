@@ -12,7 +12,8 @@
         %li
           %a{:href => "#"} Home
         %li
-          %a{:href => "#"} Features
+          = current_user.present? ? (link_to t('places.links.places'), places_path(status: :present)) : (link_to t('places.links.places'), places_path())
+
         %li
           %a{:href => "#"} Tour
         %li
