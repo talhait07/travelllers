@@ -18,7 +18,7 @@
 //= require jquery.easing.min
 //= require underscore
 //= require gmaps/google
-
+//= require jquery_nested_form
 
 
 

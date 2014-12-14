@@ -23,6 +23,7 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @place.images.build
     respond_with(@place)
   end
 
@@ -33,7 +34,7 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
     @place.save
     respond_with(@place, )
-    flash[:success] = 'New place added '
+    flash[:info] = 'New place added '
   end
 
   def update
@@ -53,6 +54,6 @@ class PlacesController < ApplicationController
 
     def place_params
       params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description,
-                                    :address, :images_attributes => [:image, :id, :place_id])
+                                    :address, :images_attributes => [:id, :photo, :place_id, :_destroy])
     end
 end
