@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  before_action :authenticate_user!, except: :index
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -22,7 +23,7 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @place = Place.new
+    @place = current_user.places.new
     @place.images.build
     respond_with(@place)
   end
@@ -31,10 +32,10 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(place_params)
+    @place = current_user.places.new(place_params)
     @place.save
-    respond_with(@place, )
-    flash[:info] = 'New place added '
+    respond_with(@place)
+    flash[:info] = t('active_record.flash.place.create')
   end
 
   def update
@@ -54,6 +55,6 @@ class PlacesController < ApplicationController
 
     def place_params
       params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description,
-                                    :address, :images_attributes => [:id, :photo, :place_id, :_destroy])
+                                    :address, :user_id, :review_id, :images_attributes => [:id, :photo, :place_id, :_destroy])
     end
 end

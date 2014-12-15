@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @tour.user_id
+%p
+  %b Place:
+  = @tour.place_id
+%p
+  %b Name:
+  = @tour.name
+%p
+  %b Description:
+  = @tour.description
+%p
+  %b Troll:
+  = @tour.troll
+
+= link_to 'Edit', edit_tour_path(@tour)
+\|
+= link_to 'Back', tours_path

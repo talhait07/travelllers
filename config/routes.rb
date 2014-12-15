@@ -1,4 +1,6 @@
 Travellers::Application.routes.draw do
+  resources :tours
+
   resources :places
 
   root  "home#index"

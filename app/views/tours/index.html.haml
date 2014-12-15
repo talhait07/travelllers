@@ -1,0 +1,27 @@
+%h1 Listing tours
+
+%table
+  %tr
+    %th User
+    %th Place
+    %th Name
+    %th Description
+    %th Troll
+    %th
+    %th
+    %th
+
+  - @tours.each do |tour|
+    %tr
+      %td= tour.user_id
+      %td= tour.place_id
+      %td= tour.name
+      %td= tour.description
+      %td= tour.troll
+      %td= link_to 'Show', tour
+      %td= link_to 'Edit', edit_tour_path(tour)
+      %td= link_to 'Destroy', tour, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tour', new_tour_path

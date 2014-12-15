@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :places
+  has_many :tours
+  has_many :images, :dependent => :destroy
+  accepts_nested_attributes_for :images , :allow_destroy => true
+
 end

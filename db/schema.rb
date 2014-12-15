@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214182907) do
+ActiveRecord::Schema.define(version: 20141215183015) do
 
   create_table "images", force: true do |t|
     t.string   "photo"
     t.integer  "place_id"
+    t.integer  "review_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,9 +30,21 @@ ActiveRecord::Schema.define(version: 20141214182907) do
     t.integer  "visited_count"
     t.text     "description"
     t.string   "address"
+    t.string   "review_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "tours", force: true do |t|
     t.integer  "user_id"
+    t.integer  "place_id"
+    t.integer  "review_id"
+    t.string   "name"
+    t.text     "description"
+    t.text     "troll"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

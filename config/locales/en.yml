@@ -24,3 +24,7 @@ en:
   places:
     links:
       places: "Places"
+  active_record:
+    flash:
+      place:
+        create: "New place added."

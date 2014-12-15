@@ -1,10 +1,8 @@
-class Place < ActiveRecord::Base
-  geocoded_by :address
+class Tour < ActiveRecord::Base
 
+  belongs_to :place
   belongs_to :user
-  has_many :tours
   has_many :images, :dependent => :destroy
   accepts_nested_attributes_for :images , :allow_destroy => true
 
-  after_validation :geocode
 end
