@@ -6,7 +6,7 @@ class PlacesController < ApplicationController
   respond_to :html
 
   def index
-    if (params.has_key?(:status) && params[:status].include?('present') )
+    if user_signed_in?
       @places = current_user.places
     else
       @places = Place.all
@@ -56,6 +56,7 @@ class PlacesController < ApplicationController
 
     def place_params
       params.require(:place).permit(:name, :rating, :longitude, :latitude, :visited_count, :description,
-                                    :address, :user_id, :review_id, :images_attributes => [:id, :photo, :place_id, :_destroy])
+                                    :address, :user_id, :review_id, :status,
+                                    :images_attributes => [:id, :photo, :place_id, :_destroy])
     end
 end

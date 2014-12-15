@@ -23,14 +23,14 @@ en:
   hello: "Hello world"
   places:
     links:
-      places: "Places"
+      places: "Favourite Places"
   active_record:
     flash:
       place:
         create: "New place added."
   tours:
     links:
-      my_tours: "My tours"
+      my_tours: "My Tours"
       default_tours: "Tours"
   loggedin_user:
     restriction:

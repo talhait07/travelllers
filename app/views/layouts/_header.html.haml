@@ -12,7 +12,7 @@
         %li
           %a{:href => "#"} Home
         %li
-          = current_user.present? ? (link_to t('places.links.places'), places_path(status: :present)) : (link_to t('places.links.places'), places_path())
+          = link_to t('places.links.places'), places_path
 
         %li
           - if user_signed_in?

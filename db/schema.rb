@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141215190258) do
     t.text     "description"
     t.string   "address"
     t.string   "review_id"
+    t.boolean  "status"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20141215190258) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "role"
+    t.boolean  "banned"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

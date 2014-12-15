@@ -9,6 +9,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.text :description
       t.string :address
       t.string :review_id
+      t.boolean :status
       t.integer :user_id
 
       t.timestamps
