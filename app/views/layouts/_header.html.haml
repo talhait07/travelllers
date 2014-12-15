@@ -15,7 +15,10 @@
           = current_user.present? ? (link_to t('places.links.places'), places_path(status: :present)) : (link_to t('places.links.places'), places_path())
 
         %li
-          %a{:href => "#"} Tour
+          - if user_signed_in?
+            = link_to t('tours.links.my_tours'), tours_path(status: true)
+          - else
+            = link_to t('tours.links.default_tours'), tour_homes_path()
         %li
           %a{:href => "#"} About Us
 

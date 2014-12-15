@@ -30,6 +30,7 @@ gem 'gmaps4rails'
 gem 'nested_form'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'cancancan', '~> 1.9'
 gem 'simple_form'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

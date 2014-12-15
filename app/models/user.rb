@@ -6,7 +6,16 @@ class User < ActiveRecord::Base
 
   has_many :places
   has_many :tours
+
   has_many :images, :dependent => :destroy
   accepts_nested_attributes_for :images , :allow_destroy => true
 
+  before_create :set_default_role
+
+  ROLES = %w[admin user banned]
+
+  protected
+  def set_default_role
+    self.role = 'user' if self.new_record?
+  end
 end

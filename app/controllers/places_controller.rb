@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource param_method: :place_params
 
   respond_to :html
 

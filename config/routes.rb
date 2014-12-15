@@ -3,9 +3,16 @@ Travellers::Application.routes.draw do
 
   resources :places
 
-  root  "home#index"
+  root  "homes#index"
   devise_for :users
   resources :users
+
+  resources :homes, :except => [:index, :show, :create, :destroy, :update, :edit] do
+    collection do
+      get 'tour'
+
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

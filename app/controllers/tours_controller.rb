@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource param_method: :tour_params
 
   respond_to :html
 
