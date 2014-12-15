@@ -8,8 +8,9 @@ class CreatePlaces < ActiveRecord::Migration
       t.integer :visited_count
       t.text :description
       t.string :address
-      t.string :review_id
-      t.boolean :status
+      t.text :special_attraction
+      t.integer :review_id
+      t.boolean :status, :default => true
       t.integer :user_id
 
       t.timestamps

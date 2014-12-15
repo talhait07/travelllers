@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20141215190258) do
     t.integer  "visited_count"
     t.text     "description"
     t.string   "address"
-    t.string   "review_id"
-    t.boolean  "status"
+    t.text     "special_attraction"
+    t.integer  "review_id"
+    t.boolean  "status",             default: true
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
