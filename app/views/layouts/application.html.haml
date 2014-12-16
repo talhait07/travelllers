@@ -10,11 +10,12 @@
     = csrf_meta_tags
   %body{:class => "#{controller_name.downcase.to_s}"}
     %header#header
-      = render 'layouts/header'
-    .container= render partial: "layouts/flash_message", flash: flash
+      = render 'shared/header'
+      -#- raise @sidebar.inspect
+    .container= render partial: "shared/flash_message", flash: flash
     %div{:class => "page-content #{action_name.downcase.to_s}"}
 
       = yield
     %footer
-      = render 'layouts/footer'
+      = render 'shared/footer'
 

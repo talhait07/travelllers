@@ -24,6 +24,7 @@ en:
   places:
     links:
       places: "Favourite Places"
+      new_places: "Create New Place"
   active_record:
     flash:
       place:
@@ -35,3 +36,5 @@ en:
   loggedin_user:
     restriction:
       message: "You are not able to access this page as you are currently logged in! "
+  common:
+    quick_links: "Quick Links"

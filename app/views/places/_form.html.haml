@@ -30,12 +30,13 @@
         %label.control-label Images
         = f.fields_for :images do |i|
           = i.file_field :photo, class: 'form-control'
-          = i.link_to_remove "Remove this image", class: 'col-sm-offset-6'
-        = f.link_to_add "Add a task", :images
+          %br
+          = i.link_to_remove "Remove this image", class: 'col-sm-7'
+        = f.link_to_add "Add a task", :images, class: 'col-sm-5'
       .col-sm-2
       .col-sm-6
         %label.control-label Place holder for review polymorphic relation
         %textarea.form-control{:name => "review", :rows => "8"}
 
     .actions
-    = f.submit 'Save', :class => 'btn btn-primary'
+    = f.submit 'Save', :class => 'btn btn-primary col-sm-offset-5'

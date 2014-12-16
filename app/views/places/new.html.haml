@@ -1,8 +1,14 @@
 - title('Places | new')
-.container
-  %h1 New place
+.col-sm-3
+  %h2 Sidebar
+  %hr
+  = render 'shared/sidebar', model: params[:controller].singularize
+.col-sm-9
+  %h2 New place
 
   = render 'form'
 
   = link_to 'Back', places_path
+
+.clearfix
 

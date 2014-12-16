@@ -1,0 +1,7 @@
+.navbar.navbar-heading
+  .navbar-inner
+    .container
+      %span.brand= t('common.quick_links')
+%ul.nav.nav-tabs.nav-stacked
+  %li= link_to t('places.links.places').html_safe, send("#{model}s_path")
+  %li= link_to t('places.links.new_places').html_safe, send("new_#{model}_path")
