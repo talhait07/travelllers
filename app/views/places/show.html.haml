@@ -1,41 +1,81 @@
-- javascript 'gmap.js'
-- javascript 'markerclusterer_packed.js'
+-#- javascript 'gmap.js'
+-#- javascript 'markerclusterer_packed.js'
 - title ("Places | #{@place.name}")
 
-.container
-  %br
-  %div{:style => "width: 800px;"}
-    #map{:style => "width: 800px; height: 400px;"}
-  %br
-  .col-md-6
-    %p
-      %b Name:
-      = @place.name
-    %p
-      %b Rating:
-      = @place.rating
-    %p
-      %b Longitude:
-      = @place.longitude
-    %p
-      %b Latitude:
-      = @place.latitude
+#carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+  / Indicators
+  %ol.carousel-indicators
+    - @place.images.each_with_index do |image, i|
+      %li{"data-slide-to" => i, "data-target" => "#carousel-example-generic"}
 
-  .col-md-6
+  .carousel-inner
 
-    %p
-      %b Visited count:
-      = @place.visited_count
-    %p
-      %b Address:
-      = @place.address
-    %p
-      %b Description:
-      = @place.description
-  .clearfix
+    .item.active
+      %img= image_tag(@place.images.first.photo.gallery.url, :class => 'full')
+      .carousel-caption
+        %h4= @place.name
+        %p= strip_tags(truncate(@place.description, length: 200))
+
+    - @place.images.each_with_index do |image, i|
+      - unless image == @place.images.first
+        .item
+
+          = image_tag(image.photo.gallery.url)
+          .carousel-caption
+            %h4= @place.name
+            %p= strip_tags(truncate(@place.description, length: 200))
+
+    -#.item.active
+    -#  = image_tag(@place.images.first.photo.gallary.url, :class => 'full')
+    -#
+    -#- @place.images.each_with_index do |image, i|
+    -#
+    -#  .item
+    -#    = link_to image_tag(image.photo.gallary.url, :class => 'full'), image
+    -#      .carousel-caption
+    -#        %h3 Caption Text
+
+  / Controls
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
+    %span.glyphicon.glyphicon-chevron-right
+
+  / Carousel
+%br
+-#%div{:style => "width: 800px;"}
+-#  #map{:style => "width: 800px; height: 400px;"}
+%br
+.col-md-6
+  %p
+    %b Name:
+    = @place.name
+  %p
+    %b Rating:
+    = @place.rating
+  %p
+    %b Longitude:
+    = @place.longitude
+  %p
+    %b Latitude:
+    = @place.latitude
+
+.col-md-6
+
+  %p
+    %b Visited count:
+    = @place.visited_count
+  %p
+    %b Address:
+    = @place.address
+  %p
+    %b Description:
+    = @place.description
+.clearfix
   = link_to 'Edit', edit_place_path(@place)
   \|
   = link_to 'Back', places_path
+.clearfix
 
   -#= render 'map', :object => @hash
   :javascript
@@ -47,5 +87,11 @@
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
     });
+
+    $('.carousel').carousel(
+      {
+        interval: 10
+      }
+    )
   });
 
