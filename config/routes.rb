@@ -1,4 +1,6 @@
 Travellers::Application.routes.draw do
+  resources :countries
+
   resources :tours
 
   resources :places

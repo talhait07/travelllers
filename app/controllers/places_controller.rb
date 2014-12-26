@@ -26,6 +26,7 @@ class PlacesController < ApplicationController
   def new
     @place = current_user.places.new
     @place.images.build
+    @countries = Country.all
     respond_with(@place)
   end
 

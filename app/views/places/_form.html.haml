@@ -8,13 +8,9 @@
   %hr
   .form-group
     .row
-      .col-sm-6
+      .col-sm-12
         %label.control-label= f.label :name
         = f.text_field :name, class: 'form-control'
-      .col-sm-6
-        %label.control-label= f.label :address
-
-        = f.text_field :address, class: 'form-control'
 
   .form-group
     .row
@@ -24,19 +20,39 @@
       .col-sm-6
         %label.control-label= f.label :special_attraction
         = f.text_area :special_attraction, :rows => 6, class: 'form-control'
+
+
   .form-group
     .row
       .col-sm-4
-        %label.control-label Images
-        = f.fields_for :images do |i|
-          = i.file_field :photo, class: 'form-control'
-          %br
-          = i.link_to_remove "Remove this image", class: 'col-sm-7'
-        = f.link_to_add "Add a task", :images, class: 'col-sm-5'
+        .image-select
+          %label.control-label Images
+          = f.fields_for :images do |i|
+            = i.file_field :photo, class: 'form-control'
+            %br
+            = i.link_to_remove "Remove this image"
+          = f.link_to_add "Add an image", :images
       .col-sm-2
       .col-sm-6
-        %label.control-label Place holder for review polymorphic relation
-        %textarea.form-control{:name => "review", :rows => "8"}
+        %label.control-label Country
+        %br
+        = f.select(:country_id, @countries.active.map{|c| [c.name, c.id]}, :class => 'chosen', :prompt => t('places.form.country_select'), html_option: {})
+  .form-group
+    .row
+      .col-sm-12
+        %label.control-label= f.label :address
+
+        = f.text_field :address, class: 'form-control'
+
+
+  .col-sm-6
+    %label.control-label Country
+    %textarea.form-control{:name => "review", :rows => "8"}
 
     .actions
     = f.submit 'Save', :class => 'btn btn-primary col-sm-offset-5'
+
+:javascript
+  $(document).ready(function(){
+    $('#place_country_id').chosen({width: "452px"});
+  })

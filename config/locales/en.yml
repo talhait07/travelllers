@@ -25,6 +25,8 @@ en:
     links:
       places: "Favourite Places"
       new_places: "Create New Place"
+    form:
+      country_select: "Select a country"
   active_record:
     flash:
       place:

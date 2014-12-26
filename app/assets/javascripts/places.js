@@ -1,0 +1,1 @@
+$('#place_country_id').chosen();
