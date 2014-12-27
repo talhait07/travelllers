@@ -24,19 +24,18 @@
 
   .form-group
     .row
-      .col-sm-4
+      .col-sm-6
         .image-select
           %label.control-label Images
           = f.fields_for :images do |i|
-            = i.file_field :photo, class: 'form-control'
+            = i.file_field :photo, class: 'form-control file-chooser'
             %br
-            = i.link_to_remove "Remove this image"
+            = i.link_to_remove "Remove this image", :class => 'remove-button '
           = f.link_to_add "Add an image", :images
-      .col-sm-2
       .col-sm-6
         %label.control-label Country
         %br
-        = f.select(:country_id, @countries.active.map{|c| [c.name, c.id]}, :class => 'chosen', :prompt => t('places.form.country_select'), html_option: {})
+        = f.select(:country_id, @countries.map{|c| [c.name, c.id]}, :class => 'chosen col-sm-6', :prompt => t('places.form.country_select'), html_option: {})
   .form-group
     .row
       .col-sm-12
@@ -44,10 +43,11 @@
 
         = f.text_field :address, class: 'form-control'
 
-
-  .col-sm-6
-    %label.control-label Country
-    %textarea.form-control{:name => "review", :rows => "8"}
+  .form-group
+    .row
+      .col-sm-6
+        %label.control-label Country
+        %textarea.form-control{:name => "review", :rows => "8"}
 
     .actions
     = f.submit 'Save', :class => 'btn btn-primary col-sm-offset-5'
