@@ -1,58 +1,67 @@
-= nested_form_for @place do |f|
-  - if @place.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@place.errors.count, "error")} prohibited this place from being saved:"
-      %ul
-        - @place.errors.full_messages.each do |msg|
-          %li= msg
-  %hr
-  .form-group
-    .row
-      .col-sm-12
-        %label.control-label= f.label :name
-        = f.text_field :name, class: 'form-control'
+= tinymce_assets
+.well.background-image
 
-  .form-group
-    .row
-      .col-sm-6
-        %label.control-label=f.label :description
-        =f.text_area :description, :rows => 6, class: 'form-control'
-      .col-sm-6
-        %label.control-label= f.label :special_attraction
-        = f.text_area :special_attraction, :rows => 6, class: 'form-control'
+  = nested_form_for @place do |f|
+    - if @place.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@place.errors.count, "error")} prohibited this place from being saved:"
+        %ul
+          - @place.errors.full_messages.each do |msg|
+            %li= msg
+    %hr
+    .form-group
+      .row
+        .col-sm-10
+          %label.control-label= f.label :name
+          = f.text_field :name, class: 'form-control'
+
+    .form-group
+      .row
+        .col-sm-10
+          %label.control-label=f.label :description
+          =f.text_area :description, :rows => 6, class: 'form-control tinymce'
+
+    %br
+    .form-group
+      .row
+        .col-sm-5
+          .image-select
+            %label.control-label Images
+            = f.fields_for :images do |i|
+              = i.file_field :photo, class: 'form-control file-chooser'
+              %br
+              = i.link_to_remove "Remove this image", :class => 'remove-button '
+            = f.link_to_add "Add an image", :images
+        .col-sm-5
+          %label.control-label Country
+          %br
+          = f.select(:country_id, @countries.map{|c| [c.name, c.id]}, :class => 'chosen col-sm-6', :prompt => t('places.form.country_select'), html_option: {})
 
 
-  .form-group
-    .row
-      .col-sm-6
-        .image-select
-          %label.control-label Images
-          = f.fields_for :images do |i|
-            = i.file_field :photo, class: 'form-control file-chooser'
-            %br
-            = i.link_to_remove "Remove this image", :class => 'remove-button '
-          = f.link_to_add "Add an image", :images
-      .col-sm-6
-        %label.control-label Country
-        %br
-        = f.select(:country_id, @countries.map{|c| [c.name, c.id]}, :class => 'chosen col-sm-6', :prompt => t('places.form.country_select'), html_option: {})
-  .form-group
-    .row
-      .col-sm-12
-        %label.control-label= f.label :address
+    %br
+    .form-group
+      .row
+        .col-sm-10
+          %label.control-label= f.label :special_attraction
+          = f.text_area :special_attraction, :rows => 6, class: 'form-control tinymce'
 
-        = f.text_field :address, class: 'form-control'
+    .form-group
+      .row
+        .col-sm-10
+          %label.control-label= f.label :address
 
-  .form-group
-    .row
-      .col-sm-6
-        %label.control-label Country
-        %textarea.form-control{:name => "review", :rows => "8"}
+          = f.text_field :address, class: 'form-control'
 
-    .actions
-    = f.submit 'Save', :class => 'btn btn-primary col-sm-offset-5'
+    .form-group
+      .row
+        .col-sm-5
+          %label.control-label Country
+          %textarea.form-control{:name => "review", :rows => "8"}
 
+      .actions
+      = f.submit 'Save', :class => 'btn btn-primary col-sm-offset-5'
+= tinymce
 :javascript
   $(document).ready(function(){
-    $('#place_country_id').chosen({width: "452px"});
+    $('#place_country_id').chosen({width: "370px"});
   })

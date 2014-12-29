@@ -70,7 +70,7 @@
     = @place.address
   %p
     %b Description:
-    = @place.description
+    = @place.description.html_safe
 .clearfix
   = link_to 'Edit', edit_place_path(@place)
   \|
